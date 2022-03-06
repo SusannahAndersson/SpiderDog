@@ -11,11 +11,10 @@ Vue.createApp({
     },
     mounted() {
         if (localStorage.hasOwnProperty("items")) {
-
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
+            
         }
-
     },
 
     methods: {
@@ -28,21 +27,19 @@ Vue.createApp({
                 id: this.id,
                 rating: 0
             });
-            localStorage.setItem("items", JSON.stringify(this.items))
+            localStorage.setItem("items", JSON.stringify(this.items));
             this.id++;
             localStorage.id = this.id;
         },
         clearLocalStorage() {
             localStorage.clear();
         },
-        setRating(){
-            // set rating for item
+        changeRating(event, index){
+            this.items.filter(x => x.id === index).rating = event.target.value;
+            localStorage.setItem("items", JSON.stringify(this.items));
         },
         deleteItemFromList(index){
             this.items.splice(index, 1);
         }
-
-
-
     }
 }).mount("#app");

@@ -25,15 +25,15 @@
                     <p>{{item.trickCommand}} </p>
                     <p>{{item.trickDescription}}</p>
                     <div class="rate">
-                        <input type="radio" v-bind:id="item.id + 'star5'" v-bind:name="item.id" value="5" />
+                        <input type="radio" v-bind:id="item.id + 'star5'" v-bind:name="item.id" value="5" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
                         <label v-bind:for="item.id + 'star5'" title="text">5 stars</label>
-                        <input type="radio" v-bind:id="item.id + 'star4'" v-bind:name="item.id" value="4" />
+                        <input type="radio" v-bind:id="item.id + 'star4'" v-bind:name="item.id" value="4" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
                         <label v-bind:for="item.id + 'star4'" title="text">4 stars</label>
-                        <input type="radio" v-bind:id="item.id + 'star3'" v-bind:name="item.id" value="3" />
+                        <input type="radio" v-bind:id="item.id + 'star3'" v-bind:name="item.id" value="3" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
                         <label v-bind:for="item.id + 'star3'" title="text">3 stars</label>
-                        <input type="radio" v-bind:id="item.id + 'star2'" v-bind:name="item.id" value="2" />
+                        <input type="radio" v-bind:id="item.id + 'star2'" v-bind:name="item.id" value="2" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
                         <label v-bind:for="item.id + 'star2'" title="text">2 stars</label>
-                        <input type="radio" v-bind:id="item.id + 'star1'" v-bind:name="item.id" value="1" />
+                        <input type="radio" v-bind:id="item.id + 'star1'" v-bind:name="item.id" value="1" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
                         <label v-bind:for="item.id + 'star1'" title="text">1 star</label>
                     </div>
                     <button @click="deleteItemFromList(index)">X</button>
