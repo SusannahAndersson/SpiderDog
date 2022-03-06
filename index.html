@@ -8,13 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider dog</title>
     <link rel="stylesheet" href="SpiderDog/StyleSheet.css" />
-    <script type="module" src="main.js"></script>
+    <script src="https://unpkg.com/vue@3" defer></script>
+    <script type="module" src="main.js" defer></script>
+
 </head>
+
 <body>
     <header>
         <h1>Spider dog</h1>
     </header>
-    <main>
+    <main id="app">
+        <button @click="test">testing</button>
         <div id="list-training">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
@@ -53,10 +57,11 @@
     <footer>
         <div class="info">
             <p>
-                Written by <a href="https://github.com/naelsh" target="_blank">Niklas</a>  <a href="https://github.com/inaas13" target="_blank">Inaas</a>
-                 <a href="https://github.com/SusannahAndersson" target="_blank">Susannah</a>
+                Written by <a href="https://github.com/naelsh" target="_blank">Niklas</a> <a href="https://github.com/inaas13" target="_blank">Inaas</a>
+                <a href="https://github.com/SusannahAndersson" target="_blank">Susannah</a>
             </p>
         </div>
     </footer>
 </body>
+
 </html>
