@@ -53,6 +53,21 @@
             <label for="description-name">Beskrivning</label>
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
             <!--Kategori drop down/multi-select/pill?-->
+
+            <select id="item_name" name="item_name">
+                <dl>
+                    <dt>Category 1</dt> 
+                    <dd><option value="fysk">Fysik</option></dd>
+                    <dd><option value="lydnad">Lydnad</option></dd>
+                    
+                    <dt>Category 2</dt>
+                            <dd><option value="nosework">Nosework</option></dd>
+                            <dd><option value="stadga">Stadga</option></dd>
+                    
+                </dl>
+            </select>
+
+
             <button type="submit">submit</button>
 
         </form>
