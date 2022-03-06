@@ -1,6 +1,19 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
+}
+
+main #list-training {
+    background-color: #EBEBEB;
+    width: 300px;
+    border: 1px solid darkgrey;
+    padding: 50px;
+    margin: 20px;
+}
+
+li {
+    list-style: none;
 }
 
 .rate {
@@ -47,16 +60,27 @@
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
 
+main .add-new {
+    background-color: #EBEBEB;
+    width: 300px;
+    border: 1px solid darkgrey;
+    padding: 50px;
+    margin: 20px;
+}
+
 /*#region footer*/
+
 footer {
     grid-area: footer;
     justify-self: center;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
     footer .info {
         margin-top: 25px;
         color: #bfbfbf;
-        font: 10px Helvetica Neue, cursive;
+        font: 10px Arial, cursive;
     }
 
     footer a {
@@ -78,4 +102,5 @@ footer {
         footer a:active {
             text-decoration: underline;
         }
+
 /*#endregion footer*/
