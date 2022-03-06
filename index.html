@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Application to keep track of dog training process">
@@ -11,7 +10,6 @@
     <script src="https://unpkg.com/vue@3" defer></script>
     <script src="main.js" defer></script>
 </head>
-
 <body>
     <header>
         <h1>Spider dog</h1>
@@ -51,24 +49,13 @@
             <input v-model="trickCommand" id="command-name" placeholder="Sitt">
             <label for="description-name">Beskrivning</label>
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
-            <!--Kategori drop down/multi-select/pill?-->
-
             <select v-model="trickCategory" id="item_name" name="item_name">
-                <dl>
-
-                    <dd>
-                <option value="fysik">Fysik</option></dd>
-                <dd>
-                <option value="lydnad">Lydnad</option></dd>
-                <dd>
-                <option value="nosework">Nosework</option></dd>
-                <dd>
-                <option value="stadga">Stadga</option></dd>
-
-                </dl>
+                <option value="" disabled>Välj kategori</option>
+                <option value="fysik">Fysik</option>
+                <option value="lydnad">Lydnad</option>
+                <option value="nosework">Nosework</option>
+                <option value="stadga">Stadga</option>
             </select>
-
-
             <button type="submit">submit</button>
         </form>
         <div id="spider-chart">
@@ -85,5 +72,4 @@
         <button @click="clearLocalStorage">clearLocalStorage</button>
     </footer>
 </body>
-
 </html>
