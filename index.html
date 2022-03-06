@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="SpiderDog/StyleSheet.css" />
     <script type="module" src="main.js"></script>
 </head>
-
 <body>
     <header>
         <h1>Spider dog</h1>
@@ -21,62 +20,43 @@
             <ul id="training-list">
                 <li>
                     <p>Ligg</p>
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                              </div>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
                 </li>
-
-                <div id="todo-top">
-                    <input type="checkbox" class="toggle-all">
-                    <label></label>
-                    <form class="todo-bar">
-                        <input type="text" id="input-bar" placeholder="What needs to be done?">
-                    </form>
-                </div>
-                <ul id="todo-list" class="hidden">
-                    <template id="todo-template">
-                        <li>
-                            <input type="checkbox" class="toggle">
-                            <label class="todo-text">skriver lite text för test</label>
-                            <button class="remove-button hidden">❌</button>
-                        </li>
-                    </template>
-                </ul>
-                <div id="status-field" class="hidden">
-                    <p><span id="unfinished-tasks">0</span> items left</p>
-                    <ul id="filter-button">
-                        <li><button type="button" id="all">All</button></li>
-                        <li><button type="button" id="active">Active</button></li>
-                        <li><button type="button" id="completed">Completed</button></li>
-                    </ul>
-                    <button type="button" id="clear-completed" class="hidden">Clear Completed</button>
-                </div>
-
-
-
-
-                <li>
-                    <p>Sitt</p>
-                </li>
-
             </ul>
         </div>
-        <div id="add-new">
-        </div>
+        <form class="add-new">
+            <label for="trick-name">Namn</label>
+            <input type="text" id="trick-name" placeholder="Sitt">
+            <label for="sign-name">Tecken</label>
+            <input type="text" id="sign-name" placeholder="Tecken">
+            <label for="command-name">Kommando</label>
+            <input type="text" id="command-name" placeholder="Sitt">
+            <label for="description-name">Beskrivning</label>
+            <input type="text" id="description-name" placeholder="Få hunden att sitta">
+            <!--Kategori drop down/multi-select/pill?-->
+        </form>
         <div id="spider-chart">
+            <svg><polygon points="150,0 270,50 300,200 225,300 75,300 0,200 30,50" /></svg>
         </div>
     </main>
     <footer>
+        <div class="info">
+            <p>
+                Written by <a href="https://github.com/naelsh" target="_blank">Niklas</a>  <a href="https://github.com/inaas13" target="_blank">Inaas</a>
+                 <a href="https://github.com/SusannahAndersson" target="_blank">Susannah</a>
+            </p>
+        </div>
     </footer>
 </body>
-
 </html>
