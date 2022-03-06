@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Application to keep track of dog training process">
@@ -10,12 +9,9 @@
     <link rel="stylesheet" href="SpiderDog/StyleSheet.css" />
     <script src="https://unpkg.com/vue@3" defer></script>
     <script src="main.js" defer></script>
-
 </head>
-
 <body>
     <header>
-
         <h1>Spider dog</h1>
     </header>
     <main id="app">
@@ -33,7 +29,7 @@
                         <label v-bind:for="item.id + 'star5'" title="text">5 stars</label>
                         <input type="radio" v-bind:id="item.id + 'star4'" v-bind:name="item.id" value="4" />
                         <label v-bind:for="item.id + 'star4'" title="text">4 stars</label>
-                        <input type="radio"v-bind:id="item.id + 'star3'" v-bind:name="item.id" value="3" />
+                        <input type="radio" v-bind:id="item.id + 'star3'" v-bind:name="item.id" value="3" />
                         <label v-bind:for="item.id + 'star3'" title="text">3 stars</label>
                         <input type="radio" v-bind:id="item.id + 'star2'" v-bind:name="item.id" value="2" />
                         <label v-bind:for="item.id + 'star2'" title="text">2 stars</label>
@@ -54,7 +50,6 @@
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
             <!--Kategori drop down/multi-select/pill?-->
             <button type="submit">submit</button>
-
         </form>
         <div id="spider-chart">
             <svg><polygon points="150,0 270,50 300,200 225,300 75,300 0,200 30,50" /></svg>
@@ -69,5 +64,4 @@
         </div>
     </footer>
 </body>
-
 </html>
