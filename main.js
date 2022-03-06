@@ -16,7 +16,7 @@ Vue.createApp({
                 trickSign: this.trickSign,
                 trickCommand: this.trickCommand,
                 trickDescription: this.trickDescription,
-
+                id: this.items.length
             });
 
         }
