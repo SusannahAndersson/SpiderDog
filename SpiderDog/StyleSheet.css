@@ -31,7 +31,8 @@ main {
                 "a b b"
                 "c c c"
                 "e e f"
-                "g g h";
+                "g g h"
+                "i i j";
             background-color: white;
             border: 1px solid black;
             padding: 5px;
@@ -55,13 +56,17 @@ main {
                 grid-area: g;
             }
 
+            main #list-training #training-list li .category {
+                grid-area: i;
+            }
+
             main #list-training #training-list li .rate {
                 grid-area: b;
                 align-self: start;
             }
 
             main #list-training #training-list li button {
-                grid-area: h;
+                grid-area: j;
                 margin: 0;
                 padding: 0;
                 justify-self: end;
