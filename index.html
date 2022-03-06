@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Application to keep track of dog training process">
@@ -10,12 +9,9 @@
     <link rel="stylesheet" href="SpiderDog/StyleSheet.css" />
     <script src="https://unpkg.com/vue@3" defer></script>
     <script src="main.js" defer></script>
-
 </head>
-
 <body>
     <header>
-
         <h1>Spider dog</h1>
     </header>
     <main id="app">
@@ -23,23 +19,24 @@
         <div id="list-training">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
-                <li v-for="item in items">
+                <li v-for="(item, index) in items">
                     <h3>{{item.trickName}}</h3>
                     <p>{{item.trickSign}} </p>
                     <p>{{item.trickCommand}} </p>
                     <p>{{item.trickDescription}}</p>
                     <div class="rate">
-                        <input type="radio" id="star5" name="rate" value="5" />
-                        <label for="star5" title="text">5 stars</label>
-                        <input type="radio" id="star4" name="rate" value="4" />
-                        <label for="star4" title="text">4 stars</label>
-                        <input type="radio" id="star3" name="rate" value="3" />
-                        <label for="star3" title="text">3 stars</label>
-                        <input type="radio" id="star2" name="rate" value="2" />
-                        <label for="star2" title="text">2 stars</label>
-                        <input type="radio" id="star1" name="rate" value="1" />
-                        <label for="star1" title="text">1 star</label>
+                        <input type="radio" v-bind:id="item.id + 'star5'" v-bind:name="item.id" value="5" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
+                        <label v-bind:for="item.id + 'star5'" title="text">5 stars</label>
+                        <input type="radio" v-bind:id="item.id + 'star4'" v-bind:name="item.id" value="4" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
+                        <label v-bind:for="item.id + 'star4'" title="text">4 stars</label>
+                        <input type="radio" v-bind:id="item.id + 'star3'" v-bind:name="item.id" value="3" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
+                        <label v-bind:for="item.id + 'star3'" title="text">3 stars</label>
+                        <input type="radio" v-bind:id="item.id + 'star2'" v-bind:name="item.id" value="2" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
+                        <label v-bind:for="item.id + 'star2'" title="text">2 stars</label>
+                        <input type="radio" v-bind:id="item.id + 'star1'" v-bind:name="item.id" value="1" @change="changeRating($event, item.id)" v-model.number="item.rating"/>
+                        <label v-bind:for="item.id + 'star1'" title="text">1 star</label>
                     </div>
+                    <button @click="deleteItemFromList(index)">X</button>
                 </li>
             </ul>
         </div>
@@ -69,7 +66,6 @@
 
 
             <button type="submit">submit</button>
-
         </form>
         <div id="spider-chart">
             <svg><polygon points="150,0 270,50 300,200 225,300 75,300 0,200 30,50" /></svg>
@@ -84,5 +80,4 @@
         </div>
     </footer>
 </body>
-
 </html>
