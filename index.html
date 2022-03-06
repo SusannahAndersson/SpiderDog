@@ -23,7 +23,7 @@
         <div id="list-training">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
-                <li v-for="item in items">
+                <li v-for="(item, index) in items">
                     <h3>{{item.trickName}}</h3>
                     <p>{{item.trickSign}} </p>
                     <p>{{item.trickCommand}} </p>
@@ -40,6 +40,7 @@
                         <input type="radio" v-bind:id="item.id + 'star1'" v-bind:name="item.id" value="1" />
                         <label v-bind:for="item.id + 'star1'" title="text">1 star</label>
                     </div>
+                    <button @click="deleteItemFromList(index)">X</button>
                 </li>
             </ul>
         </div>
