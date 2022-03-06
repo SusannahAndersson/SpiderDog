@@ -25,10 +25,7 @@
                     <p class="sign">{{item.trickSign}} </p>
                     <p class="command">{{item.trickCommand}} </p>
                     <p class="description">{{item.trickDescription}}</p>
-                    <p>{{item.trickSign}} </p>
-                    <p>{{item.trickCommand}} </p>
-                    <p>{{item.trickDescription}}</p>
-                    <p>{{item.trickCategory}}</p>
+                    <p class="category">{{item.trickCategory}}</p>
                     <div class="rate">
                         <input type="radio" v-bind:id="item.id + 'star5'" v-bind:name="item.id" value="5" @change="changeRating($event, item.id)" v-model.number="item.rating" />
                         <label v-bind:for="item.id + 'star5'" title="text">5 stars</label>
@@ -58,12 +55,16 @@
 
             <select v-model="trickCategory" id="item_name" name="item_name">
                 <dl>
-                   
-                    <dd><option value="fysik">Fysik</option></dd>
-                    <dd><option value="lydnad">Lydnad</option></dd>
-                     <dd><option value="nosework">Nosework</option></dd>
-                     <dd><option value="stadga">Stadga</option></dd>
-                    
+
+                    <dd>
+                <option value="fysik">Fysik</option></dd>
+                <dd>
+                <option value="lydnad">Lydnad</option></dd>
+                <dd>
+                <option value="nosework">Nosework</option></dd>
+                <dd>
+                <option value="stadga">Stadga</option></dd>
+
                 </dl>
             </select>
 
