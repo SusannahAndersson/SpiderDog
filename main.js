@@ -9,6 +9,16 @@ Vue.createApp({
 
         }
     },
+    mounted() {
+        if (localStorage.hasOwnProperty("items")) {
+
+            this.items = JSON.parse(localStorage.getItem("items") || "[]");
+            console.log(this.items.length);
+
+        }
+
+    },
+
     methods: {
         addNewItem() {
             this.items.push({
@@ -18,8 +28,14 @@ Vue.createApp({
                 trickDescription: this.trickDescription,
 
             });
+            localStorage.setItem("items", JSON.stringify(this.items))
 
+        },
+        clearLocalStorage() {
+            localStorage.clear();
         }
+
+
 
     }
 }).mount("#app");
