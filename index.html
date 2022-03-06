@@ -15,15 +15,19 @@
 
 <body>
     <header>
+
         <h1>Spider dog</h1>
     </header>
     <main id="app">
-        <button @click="test">testing</button>
+
         <div id="list-training">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
-                <li>
-                    <p>Ligg</p>
+                <li v-for="item in items">
+                    <h3>{{item.trickName}}</h3>
+                    <p>{{item.trickSign}} </p>
+                    <p>{{item.trickCommand}} </p>
+                    <p>{{item.trickDescription}}</p>
                     <div class="rate">
                         <input type="radio" id="star5" name="rate" value="5" />
                         <label for="star5" title="text">5 stars</label>
@@ -39,16 +43,18 @@
                 </li>
             </ul>
         </div>
-        <form class="add-new">
+        <form @submit.prevent="addNewItem" class="add-new">
             <label for="trick-name">Namn</label>
-            <input type="text" id="trick-name" placeholder="Sitt">
+            <input v-model="trickName" id="trick-name" placeholder="Sitt">
             <label for="sign-name">Tecken</label>
-            <input type="text" id="sign-name" placeholder="Tecken">
+            <input v-model="trickSign" id="sign-name" placeholder="Tecken">
             <label for="command-name">Kommando</label>
-            <input type="text" id="command-name" placeholder="Sitt">
+            <input v-model="trickCommand" id="command-name" placeholder="Sitt">
             <label for="description-name">Beskrivning</label>
-            <input type="text" id="description-name" placeholder="Få hunden att sitta">
+            <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
             <!--Kategori drop down/multi-select/pill?-->
+            <button type="submit">submit</button>
+
         </form>
         <div id="spider-chart">
             <svg><polygon points="150,0 270,50 300,200 225,300 75,300 0,200 30,50" /></svg>

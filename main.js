@@ -1,7 +1,25 @@
 Vue.createApp({
-    methods: {
-        test() {
-            console.log("hello");
+    data() {
+        return {
+            trickName: "",
+            trickSign: "",
+            trickCommand: "",
+            trickDescription: "",
+            items: [],
+
         }
+    },
+    methods: {
+        addNewItem() {
+            this.items.push({
+                trickName: this.trickName,
+                trickSign: this.trickSign,
+                trickCommand: this.trickCommand,
+                trickDescription: this.trickDescription,
+
+            });
+
+        }
+
     }
 }).mount("#app");
