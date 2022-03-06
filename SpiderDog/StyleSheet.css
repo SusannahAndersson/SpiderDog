@@ -12,9 +12,17 @@ main #list-training {
     margin: 20px;
 }
 
-li {
+ul li {
+    display: table;
+    margin: 10px auto;
+    text-align: start;
     list-style: none;
 }
+
+/*    ul li {
+        text-align: start;
+        list-style: none;
+    }*/
 
 .rate {
     float: left;
