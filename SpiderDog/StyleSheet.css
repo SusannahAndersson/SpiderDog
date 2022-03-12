@@ -6,7 +6,7 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: auto;
 }
 
 main {
@@ -14,27 +14,24 @@ main {
     grid-template-columns: 50% 50%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 735px) {
     main {
         display: grid;
         grid-template-columns: 100%;
     }
 
-    #training-list {
-        padding: 8px;
-    }
-
-    main .add-new {
-        width: auto;
-    }
+        main .add-new {
+            width: auto;
+        }
 }
 
 main #list-training {
     background-color: #EBEBEB;
-    width: 300px;
+    width: auto;
     border: 1px solid darkgrey;
-    padding: 15px;
-    margin: 20px;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 15px;
     grid-row-start: 1;
     grid-row-end: 3;
     display: flex;
@@ -145,32 +142,47 @@ main .add-new {
     background-color: #EBEBEB;
     width: auto;
     border: 1px solid darkgrey;
+    border-radius: 5px;
     padding: 30px;
     margin: 15px;
 }
 
-@media (min-width: 768px) {
-    main .add-new {
-        display: grid;
-        grid-template-columns: 30% auto;
-        background-color: #EBEBEB;
-        width: 300px;
-        border: 1px solid darkgrey;
-        padding: 50px;
-        margin: 20px;
+    main .add-new * {
+        margin: 1px;
     }
-}
 
-main .add-new button {
-    grid-row: 6;
-    grid-column: 2;
-    align-self: center;
+    main .add-new label {
+        align-self: center;
+    }
+
+    main .add-new input {
+        padding: 1px;
+    }
+
+    main .add-new button {
+        grid-row: 6;
+        grid-column: 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+    main .add-new select {
+        grid-column: 2;
+    }
+
+#spider-chart {
     justify-self: center;
 }
 
-main .add-new select {
-    grid-column: 2;
-}
+    #spider-chart .chart-background {
+        fill: #EBEBEB;
+    }
+
+    #spider-chart .chart-attributes {
+        stroke: black;
+        stroke-width: 1;
+        fill: #bfbfbf;
+    }
 
 /*#region footer*/
 footer {
