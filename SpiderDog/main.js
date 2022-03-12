@@ -58,6 +58,7 @@ Vue.createApp({
         deleteItemFromList(index) {
             this.items.splice(index, 1);
             localStorage.setItem("items", JSON.stringify(this.items));
+            this.setPoints();
         },
         // return values between 0 and 1
         getMagnitudes() {
