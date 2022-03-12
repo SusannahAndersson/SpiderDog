@@ -8,14 +8,14 @@ Vue.createApp({
             items: [],
             id: 0,
             trickCategory: "",
-            skillPoints: "100,100 100,100 100,100 100,100 100,100 100,100",
+            skillPoints: "0,0 0,0 0,0 0,0 0,0 0,0",
             maxPoints: [
-                {x:0,y:150},
-                {x:0,y:50},
-                {x:100,y:0},
-                {x:200,y:50},
-                {x:200,y:150},
-                {x:100,y:200}
+                {x:70,y:220},
+                {x:70,y:120},
+                {x:170,y:70},
+                {x:270,y:120},
+                {x:270,y:220},
+                {x:170,y:270}
             ]
         }
     },
@@ -46,8 +46,8 @@ Vue.createApp({
             localStorage.clear();
         },
         setPoints() {
-            let magnitudes = [0.5, 0.9, 0.2, 0.4, 1.0, 0.7]; // change to values
-            this.skillPoints = calculatePoints(magnitudes, this.maxPoints, {x:100, y:100});
+            let magnitudes = [.2, .7, .5, .8, .1, 0.7]; // change to values
+            this.skillPoints = calculatePoints(magnitudes, this.maxPoints, {x:170, y:170});
         },
         changeRating(event, index) {
             this.items.filter(x => x.id === index).rating = event.target.value;
