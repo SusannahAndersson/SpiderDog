@@ -29,53 +29,65 @@ main {
     }
 }
 
-main #list-training #training-list li {
-    display: grid;
-    grid-template-areas:
-        "a b b"
-        "c c c"
-        "e e f"
-        "g g h"
-        "i i j";
-    background-color: white;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
+main #list-training {
+    background-color: #EBEBEB;
+    width: 300px;
+    border: 1px solid darkgrey;
+    padding: 15px;
+    margin: 20px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
 }
 
-    main #list-training #training-list li h3 {
-        grid-area: a;
-        align-self: center;
+    main #list-training #training-list li {
+        display: grid;
+        grid-template-areas:
+            "a b b"
+            "c c c"
+            "e e f"
+            "g g h"
+            "i i j";
+        background-color: white;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
     }
 
-    main #list-training #training-list li .sign {
-        grid-area: c;
-    }
+        main #list-training #training-list li h3 {
+            grid-area: a;
+            align-self: center;
+        }
 
-    main #list-training #training-list li .command {
-        grid-area: e;
-    }
+        main #list-training #training-list li .sign {
+            grid-area: c;
+        }
 
-    main #list-training #training-list li .description {
-        grid-area: g;
-    }
+        main #list-training #training-list li .command {
+            grid-area: e;
+        }
 
-    main #list-training #training-list li .category {
-        grid-area: i;
-    }
+        main #list-training #training-list li .description {
+            grid-area: g;
+        }
 
-    main #list-training #training-list li .rate {
-        grid-area: b;
-        align-self: start;
-    }
+        main #list-training #training-list li .category {
+            grid-area: i;
+        }
 
-    main #list-training #training-list li button {
-        grid-area: j;
-        margin: 0;
-        padding: 0;
-        justify-self: end;
-        margin-right: 10px;
-    }
+        main #list-training #training-list li .rate {
+            grid-area: b;
+            align-self: start;
+        }
+
+        main #list-training #training-list li button {
+            grid-area: j;
+            margin: 0;
+            padding: 0;
+            justify-self: end;
+            margin-right: 10px;
+        }
 
 ul li {
     margin: 10px auto;
@@ -147,19 +159,6 @@ main .add-new {
         padding: 50px;
         margin: 20px;
     }
-
-    main {
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-
-    #training-list {
-        padding: 8px;
-    }
-
-    main .add-new {
-        width: 300px;
-    }
 }
 
 main .add-new button {
@@ -167,6 +166,10 @@ main .add-new button {
     grid-column: 2;
     align-self: center;
     justify-self: center;
+}
+
+main .add-new select {
+    grid-column: 2;
 }
 
 /*#region footer*/
