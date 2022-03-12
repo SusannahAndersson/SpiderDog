@@ -61,6 +61,9 @@
         <div id="spider-chart">
             <svg height="200" width="200">
                 <polygon class="chart-background" points="0,150 0,50 100,0 200,50 200,150 100,200"/>
+                <!-- Move style to css -->
+                <polygon class="chart-attributes" v-bind:points="skillPoints" style="fill: red;"/>
+
             </svg>
         </div>
     </main>
