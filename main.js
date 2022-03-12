@@ -10,12 +10,12 @@ Vue.createApp({
             trickCategory: "",
             skillPoints: "0,0 0,0 0,0 0,0 0,0 0,0",
             maxPoints: [
-                {x:70,y:220},
-                {x:70,y:120},
-                {x:170,y:70},
-                {x:270,y:120},
-                {x:270,y:220},
-                {x:170,y:270}
+                { x: 70, y: 220 },
+                { x: 70, y: 120 },
+                { x: 170, y: 70 },
+                { x: 270, y: 120 },
+                { x: 270, y: 220 },
+                { x: 170, y: 270 }
             ]
         }
     },
@@ -23,7 +23,6 @@ Vue.createApp({
         if (localStorage.hasOwnProperty("items")) {
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
-
         }
     },
 
@@ -44,10 +43,11 @@ Vue.createApp({
         },
         clearLocalStorage() {
             localStorage.clear();
+            localStorage.reload();
         },
         setPoints() {
             let magnitudes = [.2, .7, .5, .8, .1, 0.7]; // change to values
-            this.skillPoints = calculatePoints(magnitudes, this.maxPoints, {x:170, y:170});
+            this.skillPoints = calculatePoints(magnitudes, this.maxPoints, { x: 170, y: 170 });
         },
         changeRating(event, index) {
             this.items.filter(x => x.id === index).rating = event.target.value;
@@ -73,8 +73,8 @@ function calculatePoints(magnitudes, maxPoints, origin) {
     return returnValue.trim();
 }
 
-function calculatePoint(magnitude, maxPoint, origin){
-    let point = {x:0, y:0};
+function calculatePoint(magnitude, maxPoint, origin) {
+    let point = { x: 0, y: 0 };
     point.x = calculateAxisPoint(origin.x, magnitude, maxPoint.x);
     point.y = calculateAxisPoint(origin.y, magnitude, maxPoint.y);
     return point;
