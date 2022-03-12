@@ -51,19 +51,19 @@
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
             <select v-model="trickCategory" id="item_name" name="item_name">
                 <option value="" disabled>Välj kategori</option>
-                <option value="fysik">Fysik</option>
-                <option value="lydnad">Lydnad</option>
-                <option value="nosework">Nosework</option>
-                <option value="stadga">Stadga</option>
+                <option value="Fysik">Fysik</option>
+                <option value="Lydnad">Lydnad</option>
+                <option value="Nosework">Nosework</option>
+                <option value="Stadga">Stadga</option>
             </select>
             <button type="submit">submit</button>
         </form>
         <div id="spider-chart">
-            <svg height="200" width="200">
-                <polygon class="chart-background" points="0,150 0,50 100,0 200,50 200,150 100,200"/>
+            <svg height="340" width="340">
+                <polygon class="chart-background" points="70,220 70,120 170,70 270,120 270,220 170,270" />
                 <!-- Move style to css -->
-                <polygon class="chart-attributes" v-bind:points="skillPoints" style="fill: red;"/>
-
+                <polygon class="chart-attributes" v-bind:points="skillPoints" />
+                <text x="0" y="150">Fysik</text>
             </svg>
         </div>
     </main>
