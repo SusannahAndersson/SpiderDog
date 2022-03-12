@@ -53,19 +53,27 @@
                 <option value="" disabled>Välj kategori</option>
                 <option value="Fysik">Fysik</option>
                 <option value="Lydnad">Lydnad</option>
-                <option value="Nosework">Nosework</option>
+                <option value="Spåra">Spåra</option>
                 <option value="Stadga">Stadga</option>
+                <option value="Lekfullhet">Lekfullhet</option>
+                <option value="Rörlighet">Rörlighet</option>
             </select>
             <button type="submit">submit</button>
         </form>
         <div id="spider-chart">
             <svg height="340" width="340">
                 <polygon class="chart-background" points="70,220 70,120 170,70 270,120 270,220 170,270" />
-                <!-- Move style to css -->
                 <polygon class="chart-attributes" v-bind:points="skillPoints" />
-                <text x="0" y="150">Fysik</text>
+                <text x="35" y="230">Fysik</text>
+                <text x="22" y="122">Lydnad</text>
+                <text x="145" y="65">Spåra</text>
+                <text x="270" y="122">Stadga</text>
+                <text x="270" y="230">Lekfullhet</text>
+                <text x="145" y="285">Rörlighet</text>
             </svg>
         </div>
+        <!--clearLocalStorage button nedan: Fungerar, men används enbart ur testsyfte dvs är ingen funktionalitet som end-user behöver-->
+        <!--<button @click="clearLocalStorage">clearLocalStorage</button>-->
     </main>
     <footer>
         <div class="info">
@@ -76,7 +84,6 @@
                 <a href="https://github.com/SusannahAndersson" target="_blank">Susannah</a>
             </p>
         </div>
-        <button @click="clearLocalStorage">clearLocalStorage</button>
     </footer>
 </body>
 </html>
