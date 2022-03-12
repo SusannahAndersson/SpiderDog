@@ -23,6 +23,7 @@ Vue.createApp({
         if (localStorage.hasOwnProperty("items")) {
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
+            this.setPoints();
         }
     },
 
@@ -52,11 +53,12 @@ Vue.createApp({
         changeRating(event, index) {
             this.items.filter(x => x.id === index).rating = event.target.value;
             localStorage.setItem("items", JSON.stringify(this.items));
-
+            
             this.setPoints();
         },
         deleteItemFromList(index) {
             this.items.splice(index, 1);
+            localStorage.setItem("items", JSON.stringify(this.items));
         }
     }
 }).mount("#app");
