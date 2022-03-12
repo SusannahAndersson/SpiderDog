@@ -46,7 +46,7 @@ Vue.createApp({
             localStorage.reload();
         },
         setPoints() {
-            let magnitudes = [.2, .7, .5, .8, .1, 0.7]; // change to values
+            let magnitudes = this.getMagnitudes(); // change to values
             this.skillPoints = calculatePoints(magnitudes, this.maxPoints, { x: 170, y: 170 });
         },
         changeRating(event, index) {
@@ -57,6 +57,58 @@ Vue.createApp({
         },
         deleteItemFromList(index) {
             this.items.splice(index, 1);
+        },
+        // return values between 0 and 1
+        getMagnitudes() {
+            // loopa igenom alla items
+            let returnValue = [0,0,0,0,0,0];
+            let occurences = [0,0,0,0,0,0];
+            for (const item of this.items) {
+                // för varje gruppering (dvs kategori)
+                switch (item.trickCategory) {
+                    // hämta ut rating och räknar hur många träffar
+                    case "Fysik":
+                        returnValue[0] += Number(item.rating);
+                        occurences[0]++;
+                        break;
+                    case "Lydnad":
+                        returnValue[1] += Number(item.rating);
+                        occurences[1]++;
+                        break;
+                    case "Spåra":
+                        returnValue[2] += Number(item.rating);
+                        occurences[2]++;
+                        break;
+                    case "Stadga":
+                        returnValue[3] += Number(item.rating);
+                        occurences[3]++;
+                        break;
+                    case "Lekfullhet":
+                        returnValue[4] += Number(item.rating);
+                        occurences[4]++;
+                        break;
+                    case "Rörlighet":
+                        returnValue[5] += Number(item.rating);
+                        occurences[5]++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            for (let itemIndex = 0; itemIndex < returnValue.length; itemIndex++) {
+                // summan, dela på antal av kategorin
+                // dela med 5 (maxrating)
+                if (occurences[itemIndex] === 0) {
+                    returnValue[itemIndex] = 0;
+                }
+                else {
+                    returnValue[itemIndex] = (returnValue[itemIndex] / occurences[itemIndex]) / 5;
+                }
+            }
+
+            // returnera värde
+            return returnValue;
         }
     }
 }).mount("#app");
