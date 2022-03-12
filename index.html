@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Application to keep track of dog training process">
@@ -10,6 +11,7 @@
     <script src="https://unpkg.com/vue@3" defer></script>
     <script src="SpiderDog/main.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Spider dog</h1>
@@ -49,7 +51,7 @@
             <input v-model="trickCommand" id="command-name" placeholder="Sitt">
             <label for="description-name">Beskrivning</label>
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
-            <select v-model="trickCategory" id="item_name" name="item_name">
+            <select v-model="trickCategory" id="item-name" name="item-name">
                 <option value="" disabled>Välj kategori</option>
                 <option value="Fysik">Fysik</option>
                 <option value="Lydnad">Lydnad</option>
@@ -86,4 +88,5 @@
         </div>
     </footer>
 </body>
+
 </html>
