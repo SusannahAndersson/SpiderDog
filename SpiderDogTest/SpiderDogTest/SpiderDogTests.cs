@@ -15,7 +15,12 @@ namespace SpiderDogTest
         {
             ChromeOptions options = new ChromeOptions();
             _browser = new ChromeDriver(options);
-            _url = @"file:///Users/inaasisse/Frontend/SpiderDog-1/index.html"; 
+
+            // inaas testurl
+            //_url = @"file:///Users/inaasisse/Frontend/SpiderDog-1/index.html"; 
+
+            // niklas testurl
+            _url = @"file:///C:/Git/Teknikh%C3%B6gskolan/Frontend/Gruppuppgift%204%20-%20Slutuppgift/SpiderDog/index.html";
 
         }
 
