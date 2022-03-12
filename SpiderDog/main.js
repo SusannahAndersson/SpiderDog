@@ -23,6 +23,7 @@ Vue.createApp({
         if (localStorage.hasOwnProperty("items")) {
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
+            this.setPoints();
         }
     },
 
@@ -103,8 +104,7 @@ Vue.createApp({
                 // dela med 5 (maxrating)
                 if (occurences[itemIndex] === 0) {
                     returnValue[itemIndex] = 0;
-                }
-                else {
+                } else {
                     returnValue[itemIndex] = (returnValue[itemIndex] / occurences[itemIndex]) / 5;
                 }
             }
