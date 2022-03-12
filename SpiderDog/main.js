@@ -57,12 +57,13 @@ Vue.createApp({
         },
         deleteItemFromList(index) {
             this.items.splice(index, 1);
+            localStorage.setItem("items", JSON.stringify(this.items));
         },
         // return values between 0 and 1
         getMagnitudes() {
             // loopa igenom alla items
-            let returnValue = [0,0,0,0,0,0];
-            let occurences = [0,0,0,0,0,0];
+            let returnValue = [0, 0, 0, 0, 0, 0];
+            let occurences = [0, 0, 0, 0, 0, 0];
             for (const item of this.items) {
                 // för varje gruppering (dvs kategori)
                 switch (item.trickCategory) {
@@ -95,7 +96,7 @@ Vue.createApp({
                         break;
                 }
             }
-            
+
             for (let itemIndex = 0; itemIndex < returnValue.length; itemIndex++) {
                 // summan, dela på antal av kategorin
                 // dela med 5 (maxrating)
