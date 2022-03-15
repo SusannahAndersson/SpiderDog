@@ -166,6 +166,10 @@ main .add-new {
         padding: 1px;
     }
 
+    main .add-new .required-marker {
+        color: red;
+    }
+
     main .add-new button {
         grid-row: 6;
         grid-column: 2;
@@ -176,6 +180,10 @@ main .add-new {
     main .add-new select {
         grid-column: 2;
     }
+
+        main .add-new select:invalid ::placeholder {
+            color: red;
+        }
 
 #spider-chart {
     justify-self: center;
