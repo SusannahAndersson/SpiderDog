@@ -31,7 +31,7 @@ main {
     }
 }
 
-main #list-training {
+main #training-list-container {
     background-color: #EBEBEB;
     width: auto;
     border: 1px solid darkgrey;
@@ -44,7 +44,7 @@ main #list-training {
     flex-direction: column;
 }
 
-main #list-training #training-list li {
+main #training-list-container #training-list li {
     display: grid;
     grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i j";
     background-color: white;
@@ -54,41 +54,41 @@ main #list-training #training-list li {
 }
 
 @media (max-width: 400px) {
-    main #list-training #training-list li {
+    main #training-list-container #training-list li {
         grid-template-areas: "a a a" "b b b" "c c c" "e e f" "g g h" "i i j";
     }
-    main #list-training #training-list li .rate {
+    main #training-list-container #training-list li .rate {
         justify-self: start;
     }
 }
 
-main #list-training #training-list li h3 {
+main #training-list-container #training-list li h3 {
     grid-area: a;
     align-self: center;
 }
 
-main #list-training #training-list li .sign {
+main #training-list-container #training-list li .sign {
     grid-area: c;
 }
 
-main #list-training #training-list li .command {
+main #training-list-container #training-list li .command {
     grid-area: e;
 }
 
-main #list-training #training-list li .description {
+main #training-list-container #training-list li .description {
     grid-area: g;
 }
 
-main #list-training #training-list li .category {
+main #training-list-container #training-list li .category {
     grid-area: i;
 }
 
-main #list-training #training-list li .rate {
+main #training-list-container #training-list li .rate {
     grid-area: b;
     align-self: start;
 }
 
-main #list-training #training-list li button {
+main #training-list-container #training-list li button {
     grid-area: j;
     margin: 0;
     padding: 0;
