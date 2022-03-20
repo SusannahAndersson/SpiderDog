@@ -43,13 +43,22 @@ ul li {
     flex-direction: column;
 }
 
+    #training-list-container p {
+        
+    }
+
+    #training-list-container .hidden{
+        display: none;
+    }
+
     #training-list-container #training-list li {
         display: grid;
-        grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i j";
+        grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i i";
         background-color: white;
         border: 1px solid black;
         padding: 5px;
         border-radius: 5px;
+        position: relative;
     }
 
         #training-list-container #training-list li h3 {
@@ -79,11 +88,15 @@ ul li {
         }
 
         #training-list-container #training-list li button {
-            grid-area: j;
-            margin: 0;
-            padding: 0;
-            justify-self: end;
-            margin-right: 10px;
+            border-width: 1px;
+            border-radius: 15%;
+            position: absolute;
+            right: -8px;
+            top: -8px;
+        }
+
+        #training-list-container #training-list li button:hover {
+            border-color: red;
         }
 /*#endregion training-list*/
 

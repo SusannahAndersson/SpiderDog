@@ -38,9 +38,14 @@
                         <input type="radio" v-bind:id="item.id + 'star1'" v-bind:name="item.id" value="1" @change="changeRating($event, item.id)" v-model.number="item.rating" />
                         <label v-bind:for="item.id + 'star1'" title="text">1 star</label>
                     </div>
-                    <button @click="deleteItemFromList(index)">X</button>
+                    <button @click="deleteItemFromList(index)">🗑️</button>
                 </li>
             </ul>
+            <section v-bind:class="{hidden: areThereItems}">
+                <p>Spider dog är en applikation där det går att hålla koll på träning och följa upp din och din hunds utveckling. Som stöd finns det ett spindeldiagram som gör det enklare att få en överblick kring framstegen, därav namnet Spider Dog.</p>
+                <p>Det finns för närvarande inga träningsaktiviteter i listan. För att lägga till en ny, fyll i fomuläret.</p>
+            </section>
+
         </div>
         <form @submit.prevent="addNewItem" class="add-new">
             <label for="new-trick-name">Namn <span class="required-marker">*</span></label>
