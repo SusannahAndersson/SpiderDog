@@ -17,7 +17,7 @@
         <h1>Spider dog</h1>
     </header>
     <main id="app">
-        <div id="list-training">
+        <div id="training-list-container">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
                 <li v-for="(item, index) in items">
@@ -43,25 +43,25 @@
             </ul>
         </div>
         <form @submit.prevent="addNewItem" class="add-new">
-            <label for="trick-name">Namn <span class="required-marker">*</span></label>
-            <input v-model="trickName" id="trick-name" placeholder="Sitt" required>
-            <label for="sign-name">Tecken</label>
-            <input v-model="trickSign" id="sign-name" placeholder="Tecken">
-            <label for="command-name">Kommando</label>
-            <input v-model="trickCommand" id="command-name" placeholder="Sitt">
-            <label for="description-name">Beskrivning</label>
-            <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
-            <select v-model="trickCategory" id="item-name" name="item-name" required>
+            <label for="new-trick-name">Namn <span class="required-marker">*</span></label>
+            <input v-model="trickName" id="new-trick-name" placeholder="Sitt" required>
+            <label for="new-trick-sign">Tecken</label>
+            <input v-model="trickSign" id="new-trick-sign" placeholder="Tecken">
+            <label for="new-trick-command">Kommando</label>
+            <input v-model="trickCommand" id="new-trick-command" placeholder="Sitt">
+            <label for="new-trick-description">Beskrivning</label>
+            <input v-model="trickDescription" id="new-trick-description" placeholder="Få hunden att sitta">
+            <select v-model="trickCategory" id="trick-category" name="trick-category" required>
                 <option value="" disabled>Välj kategori</option>
-                <option value="Fysik">Fysik</option>
-                <option value="Lydnad">Lydnad</option>
-                <option value="Spåra">Spåra</option>
-                <option value="Stadga">Stadga</option>
-                <option value="Lekfullhet">Lekfullhet</option>
-                <option value="Rörlighet">Rörlighet</option>
+                <option value="Physic">Fysik</option>
+                <option value="Obedience">Lydnad</option>
+                <option value="Tracking">Spåra</option>
+                <option value="Stability">Stadga</option>
+                <option value="Playfullness">Lekfullhet</option>
+                <option value="Agility">Rörlighet</option>
             </select>
             <button type="submit">Skapa</button>
-            <button @click="readDummyData" :disabled="isDisabled">Hämta exempel</button>
+            <button @click="readDummyData" :disabled="areThereItems">Hämta exempel</button>
         </form>
         <div id="spider-chart">
             <svg height="340" width="340">
