@@ -34,6 +34,12 @@ Vue.createApp({
     },
 
     methods: {
+        update() {
+            localStorage.setItem("items", JSON.stringify(this.items));
+            localStorage.id = this.id;
+            this.setPoints();
+        },
+
         addNewItem() {
             this.items.push({
                 trickName: this.trickName,
@@ -44,33 +50,27 @@ Vue.createApp({
                 rating: 0,
                 trickCategory: this.trickCategory,
             });
-            localStorage.setItem("items", JSON.stringify(this.items));
             
             this.id++;
-            localStorage.id = this.id;
-        },
-
-        clearLocalStorage() {
-            localStorage.clear();
-            location.reload();
-        },
-
-        setPoints() {
-            let magnitudes = this.getMagnitudes();
-            this.skillPoints = calculatePoints(magnitudes, this.maxPoints, { x: 170, y: 170 });
+            this.update();
         },
 
         changeRating(event, index) {
             this.items.filter(x => x.id === index).rating = event.target.value;
-            localStorage.setItem("items", JSON.stringify(this.items));
-
-            this.setPoints();
+            this.update();
         },
 
         deleteItemFromList(index) {
             this.items.splice(index, 1);
-            localStorage.setItem("items", JSON.stringify(this.items));
-            this.setPoints();
+            this.update();
+        },
+
+        setPoints() {
+            this.skillPoints = calculatePoints(
+                this.getMagnitudes(),
+                this.maxPoints,
+                { x: 170, y: 170 }
+            );
         },
 
         // return values between 0 and 1
@@ -120,6 +120,11 @@ Vue.createApp({
             return returnValue;
         },
 
+        clearLocalStorage() {
+            localStorage.clear();
+            location.reload();
+        },
+
         async readDummyData() {
             let fileItems = await fetch("https://raw.githubusercontent.com/SusannahAndersson/SpiderDog/master/Data/dummyData.json")
                 .then(response => {
@@ -127,7 +132,7 @@ Vue.createApp({
                 });
 
             this.items = fileItems.items;
-            localStorage.setItem("items", JSON.stringify(this.items));
+            this.update();
         }
     }
 }).mount("#app");
@@ -135,9 +140,7 @@ Vue.createApp({
 function calculatePoints(magnitudes, maxPoints, origin) {
     let returnValue = "";
     for (let pointIndex = 0; pointIndex < magnitudes.length; pointIndex++) {
-        const magnitude = magnitudes[pointIndex];
-        const maxPoint = maxPoints[pointIndex];
-        let point = calculatePoint(magnitude, maxPoint, origin);
+        let point = calculatePoint(magnitudes[pointIndex], maxPoints[pointIndex], origin);
         returnValue = returnValue + " " + point.x + "," + point.y;
     }
 
