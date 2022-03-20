@@ -20,9 +20,8 @@ namespace SpiderDogTest
             //_url = @"file:///Users/inaasisse/Frontend/SpiderDog-1/index.html"; 
 
             // niklas testurl
-            //_url = @"file:///C:/Git/Teknikh%C3%B6gskolan/Frontend/Gruppuppgift%204%20-%20Slutuppgift/SpiderDog/index.html";
-            // susannah testurl
-            _url = @"http://localhost:50762/index.html";
+            _url = @"file:///C:/Git/Teknikh%C3%B6gskolan/Frontend/Gruppuppgift%204%20-%20Slutuppgift/SpiderDog/index.html";
+
         }
 
         [TearDown]
@@ -30,6 +29,8 @@ namespace SpiderDogTest
         {
             _browser.Quit();
         }
+
+     
 
         [TestCase("Lydnad")]
         [TestCase("Fysik")]
@@ -44,22 +45,22 @@ namespace SpiderDogTest
 
 
             FillForm(categoryName);
-
+           
             var listItemCategoryName = _browser.FindElement(By.ClassName("category")).Text;
 
-            Assert.AreEqual(categoryName, listItemCategoryName);
+            Assert.AreEqual(categoryName, listItemCategoryName); 
 
         }
-
+        
         [Test]
-
+        
         public void ChangeRating([Values(1, 2, 3, 4, 5)] int index)
         {
             _browser.Navigate().GoToUrl(_url);
             _browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
             FillForm("Fysik");
 
-
+           
             _browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
             var rateInput = _browser.FindElement(By.CssSelector($"label[for='0star{index}']"));
             rateInput.Click();
