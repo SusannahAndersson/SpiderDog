@@ -5,9 +5,9 @@ Vue.createApp({
             trickSign: "",
             trickCommand: "",
             trickDescription: "",
-            items: [],
-            id: 0,
             trickCategory: "",
+            id: 0,
+            items: [],
             skillPoints: "0,0 0,0 0,0 0,0 0,0 0,0",
             maxPoints: [
                 { x: 70, y: 220 },
@@ -21,9 +21,13 @@ Vue.createApp({
     },
     mounted() {
         if (localStorage.hasOwnProperty("items")) {
+            console.log("has items");
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
             this.setPoints();
+        }
+        else{
+            console.log("does not have items");
         }
     },
 
@@ -125,6 +129,7 @@ Vue.createApp({
                 });
 
             this.items = fileItems.items;
+            localStorage.setItem("items", JSON.stringify(this.items));
         }
     }
 }).mount("#app");
