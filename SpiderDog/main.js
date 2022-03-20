@@ -111,6 +111,14 @@ Vue.createApp({
 
             // returnera värde
             return returnValue;
+        },
+        async readDummyData() {
+            let fileItems = await fetch("https://raw.githubusercontent.com/Naelsh/jsonfiles/master/dogTricks.json")
+                .then(response => {
+                    return response.json();
+                });
+
+            this.items = fileItems.items;
         }
     }
 }).mount("#app");
