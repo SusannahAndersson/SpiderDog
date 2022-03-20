@@ -21,13 +21,9 @@ Vue.createApp({
     },
     mounted() {
         if (localStorage.hasOwnProperty("items")) {
-            console.log("has items");
             this.items = JSON.parse(localStorage.getItem("items") || "[]");
             this.id = localStorage.id;
             this.setPoints();
-        }
-        else{
-            console.log("does not have items");
         }
     },
 
@@ -49,37 +45,41 @@ Vue.createApp({
                 trickCategory: this.trickCategory,
             });
             localStorage.setItem("items", JSON.stringify(this.items));
+            
             this.id++;
             localStorage.id = this.id;
         },
+
         clearLocalStorage() {
             localStorage.clear();
-            localStorage.reload();
+            location.reload();
         },
+
         setPoints() {
-            let magnitudes = this.getMagnitudes(); // change to values
+            let magnitudes = this.getMagnitudes();
             this.skillPoints = calculatePoints(magnitudes, this.maxPoints, { x: 170, y: 170 });
         },
+
         changeRating(event, index) {
             this.items.filter(x => x.id === index).rating = event.target.value;
             localStorage.setItem("items", JSON.stringify(this.items));
 
             this.setPoints();
         },
+
         deleteItemFromList(index) {
             this.items.splice(index, 1);
             localStorage.setItem("items", JSON.stringify(this.items));
             this.setPoints();
         },
+
         // return values between 0 and 1
         getMagnitudes() {
-            // loopa igenom alla items
             let returnValue = [0, 0, 0, 0, 0, 0];
             let occurences = [0, 0, 0, 0, 0, 0];
+
             for (const item of this.items) {
-                // för varje gruppering (dvs kategori)
                 switch (item.trickCategory) {
-                    // hämta ut rating och räknar hur många träffar
                     case "Physic":
                         returnValue[0] += Number(item.rating);
                         occurences[0]++;
@@ -110,8 +110,6 @@ Vue.createApp({
             }
 
             for (let itemIndex = 0; itemIndex < returnValue.length; itemIndex++) {
-                // summan, dela på antal av kategorin
-                // dela med 5 (maxrating)
                 if (occurences[itemIndex] === 0) {
                     returnValue[itemIndex] = 0;
                 } else {
@@ -119,9 +117,9 @@ Vue.createApp({
                 }
             }
 
-            // returnera värde
             return returnValue;
         },
+
         async readDummyData() {
             let fileItems = await fetch("https://raw.githubusercontent.com/SusannahAndersson/SpiderDog/master/Data/dummyData.json")
                 .then(response => {
