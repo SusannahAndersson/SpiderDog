@@ -95,7 +95,7 @@
             "trickSign": "För handnen i sidled",
             "trickCommand": "Inget",
             "trickDescription": "Börja med att göra hissen så att hunden har sina framben på ett föremål. Håll sedan en godis i närheten men så att den inte når vid sidan av. Låt hunden ta sig bort genom att flytta position på fram och baktassar. Belöna",
-            "id": 10000001,
+            "id": 100000011,
             "rating": 0,
             "trickCategory": "Agility"
         },
@@ -104,7 +104,7 @@
             "trickSign": "Guida med handen",
             "trickCommand": "Slalom",
             "trickDescription": "Få din hund att köra slalom mellan dina ben. Börja med att ha din hund på ena sidan. Ta ett steg med det ben som är längst bort från hunden. Locka med en godbit på utsidan av benet så att hunden går under det ben som du tagit ett steg med. Byt ben och fortsätt. I början, belöna varje gång.",
-            "id": 10000001,
+            "id": 100000012,
             "rating": 0,
             "trickCategory": "Agility"
         }
