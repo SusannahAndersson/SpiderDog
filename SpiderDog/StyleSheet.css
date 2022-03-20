@@ -166,11 +166,18 @@ main .add-new {
         padding: 1px;
     }
 
-    main .add-new button {
+    main .add-new button[type=submit] {
         grid-row: 6;
         grid-column: 2;
         align-self: center;
         justify-self: center;
+    }
+
+    main .add-new button {
+        grid-row: 7;
+        grid-column: 2;
+        align-self: center;
+        justify-self: right;
     }
 
     main .add-new select {
