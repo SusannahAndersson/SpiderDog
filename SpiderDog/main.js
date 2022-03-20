@@ -119,7 +119,7 @@ Vue.createApp({
             return returnValue;
         },
         async readDummyData() {
-            let fileItems = await fetch("https://raw.githubusercontent.com/Naelsh/jsonfiles/master/dogTricks.json")
+            let fileItems = await fetch("https://raw.githubusercontent.com/SusannahAndersson/SpiderDog/master/Data/dummyData.json")
                 .then(response => {
                     return response.json();
                 });
