@@ -265,7 +265,7 @@ footer {
     grid-area: footer;
     justify-self: center;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 45px;
 }
 
     footer .info {
