@@ -6,7 +6,7 @@
             "trickCommand": "Sitt!",
             "trickDescription": "Håll en godis ovanför hunden, för den bakom hunden tills den sätter sig. Belöna!",
             "id": 10000001,
-            "rating": 0,
+            "rating": 3,
             "trickCategory": "Obedience"
         },
         {
@@ -15,7 +15,7 @@
             "trickCommand": "Inget",
             "trickDescription": "Håll en matbit i handen, ignorera allt hunden gör tills den tittar dig i ögonen. Belöna!",
             "id": 10000002,
-            "rating": 0,
+            "rating": 2,
             "trickCategory": "Obedience"
         },
         {
@@ -24,7 +24,7 @@
             "trickCommand": "Sitt, Stanna!",
             "trickDescription": "Få din hund att sitta, höj handen och säg 'stanna'. I början räcker det med att skrapa lite i marken, men höj sedan svårigheten till att backa undan. Ge alltid belöning på ursprungsplatsen.",
             "id": 10000003,
-            "rating": 0,
+            "rating": 3,
             "trickCategory": "Stability"
         },
         {
@@ -33,7 +33,7 @@
             "trickCommand": "Sitt, Stanna!",
             "trickDescription": "Få din hund att ligga, höj handen och säg 'stanna'. I början räcker det med att skrapa lite i marken, men höj sedan svårigheten till att backa undan. Ge alltid belöning på ursprungsplatsen och på marken mellan framtassarna för att hindra att hunden reser sig för att ta emot belöningen.",
             "id": 10000004,
-            "rating": 0,
+            "rating": 4,
             "trickCategory": "Stability"
         },
         {
@@ -42,7 +42,7 @@
             "trickCommand": "Hissen!",
             "trickDescription": "Få din hund att ställa sig med frambenen på ett föremål. I början, lägg en matbit på en plats så de själva tar sig upp och äter, säg kommandot. Belöna sedan från handen men ge kommandot för att starta.",
             "id": 10000005,
-            "rating": 0,
+            "rating": 5,
             "trickCategory": "Physic"
         },
         {
@@ -51,7 +51,7 @@
             "trickCommand": "Hoppa upp!",
             "trickDescription": "Få din hund att hoppa upp på ett föremål, typ sten eller stock. Börja med att föra handen upp över objektet med en godis. Byt sedan ut mot att inte ha godis men belöna när den hoppat upp",
             "id": 10000006,
-            "rating": 0,
+            "rating": 4,
             "trickCategory": "Physic"
         },
         {
@@ -60,7 +60,7 @@
             "trickCommand": "Leta godis!",
             "trickDescription": "Fäst lite godisbitar i ett träd. När det är redo säg 'Leta godis!' och låt hunden nosa reda på godbitarna",
             "id": 10000007,
-            "rating": 0,
+            "rating": 2,
             "trickCategory": "Tracking"
         },
         {
@@ -69,7 +69,7 @@
             "trickCommand": "Leta nyckel!",
             "trickDescription": "Få din hund att hitta borttappade nycklar. Börja med att lägga mat på nycklarna och belöna, ta sedan och lägg maten under nyckeln, ta sedan bort matbit och belöna när hundne hittar nyckeln",
             "id": 10000008,
-            "rating": 0,
+            "rating": 2,
             "trickCategory": "Tracking"
         },
         {
@@ -78,7 +78,7 @@
             "trickCommand": "Bus!",
             "trickDescription": "Få din hund att kampa med dig. Om hunden inte visar intresse, tjoa och låt medan du drar leksaken på marken bort från hunden. Så snart den börjar bita tag lek med hela din kropp så att den förstår att det är lek på gång.",
             "id": 10000009,
-            "rating": 0,
+            "rating": 4,
             "trickCategory": "Playfullness"
         },
         {
@@ -87,7 +87,7 @@
             "trickCommand": "Hämta leksak!",
             "trickDescription": "Kasta iväg en leksak, vänta tills hunden är lugn och säg sedan kommandot. Om du inte vågar ha hunden lös, spring med hunden bort. Belöna när du får leksaken genom att busa",
             "id": 100000010,
-            "rating": 0,
+            "rating": 3,
             "trickCategory": "Playfullness"
         },
         {
@@ -96,7 +96,7 @@
             "trickCommand": "Inget",
             "trickDescription": "Börja med att göra hissen så att hunden har sina framben på ett föremål. Håll sedan en godis i närheten men så att den inte når vid sidan av. Låt hunden ta sig bort genom att flytta position på fram och baktassar. Belöna",
             "id": 100000011,
-            "rating": 0,
+            "rating": 1,
             "trickCategory": "Agility"
         },
         {
@@ -105,7 +105,7 @@
             "trickCommand": "Slalom",
             "trickDescription": "Få din hund att köra slalom mellan dina ben. Börja med att ha din hund på ena sidan. Ta ett steg med det ben som är längst bort från hunden. Locka med en godbit på utsidan av benet så att hunden går under det ben som du tagit ett steg med. Byt ben och fortsätt. I början, belöna varje gång.",
             "id": 100000012,
-            "rating": 0,
+            "rating": 2,
             "trickCategory": "Agility"
         }
     ]
