@@ -302,6 +302,10 @@ footer {
         #training-list-container #training-list li .rate {
             justify-self: start;
         }
+
+    #training-list-container .credits {
+        margin: 20px 0 10px 0;
+    }
 }
 
 @media (max-width: 735px) {
