@@ -26,10 +26,9 @@ main {
         display: grid;
         grid-template-columns: 100%;
     }
-
-        main .add-new {
-            width: auto;
-        }
+    main .add-new {
+        width: auto;
+    }
 }
 
 main #list-training {
@@ -39,59 +38,54 @@ main #list-training {
     border-radius: 5px;
     padding: 30px;
     margin: 15px;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    /* arbitrary for 1000 to provide lots of space */
+    grid-row: 1/span 1000;
     display: flex;
     flex-direction: column;
 }
 
-    main #list-training #training-list li {
-        display: grid;
-        grid-template-areas:
-            "a b b"
-            "c c c"
-            "e e f"
-            "g g h"
-            "i i j";
-        background-color: white;
-        border: 1px solid black;
-        padding: 5px;
-        border-radius: 5px;
-    }
+main #list-training #training-list li {
+    display: grid;
+    grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i j";
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-        main #list-training #training-list li h3 {
-            grid-area: a;
-            align-self: center;
-        }
+main #list-training #training-list li h3 {
+    grid-area: a;
+    align-self: center;
+}
 
-        main #list-training #training-list li .sign {
-            grid-area: c;
-        }
+main #list-training #training-list li .sign {
+    grid-area: c;
+}
 
-        main #list-training #training-list li .command {
-            grid-area: e;
-        }
+main #list-training #training-list li .command {
+    grid-area: e;
+}
 
-        main #list-training #training-list li .description {
-            grid-area: g;
-        }
+main #list-training #training-list li .description {
+    grid-area: g;
+}
 
-        main #list-training #training-list li .category {
-            grid-area: i;
-        }
+main #list-training #training-list li .category {
+    grid-area: i;
+}
 
-        main #list-training #training-list li .rate {
-            grid-area: b;
-            align-self: start;
-        }
+main #list-training #training-list li .rate {
+    grid-area: b;
+    align-self: start;
+}
 
-        main #list-training #training-list li button {
-            grid-area: j;
-            margin: 0;
-            padding: 0;
-            justify-self: end;
-            margin-right: 10px;
-        }
+main #list-training #training-list li button {
+    grid-area: j;
+    margin: 0;
+    padding: 0;
+    justify-self: end;
+    margin-right: 10px;
+}
 
 ul li {
     margin: 10px auto;
@@ -105,46 +99,48 @@ ul li {
     padding: 0 10px;
 }
 
-    .rate:not(:checked) > input {
-        position: absolute;
-        top: -9999px;
-    }
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
 
-    .rate:not(:checked) > label {
-        float: right;
-        width: 1em;
-        overflow: hidden;
-        white-space: nowrap;
-        cursor: pointer;
-        font-size: 30px;
-        color: #ccc;
-    }
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
 
-        .rate:not(:checked) > label:before {
-            content: '★ ';
-        }
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
 
-    .rate > input:checked ~ label {
-        color: #ffc700;
-    }
+.rate>input:checked~label {
+    color: #ffc700;
+}
 
-    .rate:not(:checked) > label:hover,
-    .rate:not(:checked) > label:hover ~ label {
-        color: #deb217;
-    }
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
 
-    .rate > input:checked + label:hover,
-    .rate > input:checked + label:hover ~ label,
-    .rate > input:checked ~ label:hover,
-    .rate > input:checked ~ label:hover ~ label,
-    .rate > label:hover ~ input:checked ~ label {
-        color: #c59b08;
-    }
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
 
 main .add-new {
     display: grid;
+    align-self: start;
     grid-template-columns: 30% auto;
     background-color: #EBEBEB;
     width: auto;
@@ -154,59 +150,61 @@ main .add-new {
     margin: 15px;
 }
 
-    main .add-new * {
-        margin: 1px;
-    }
+main .add-new * {
+    margin: 1px;
+}
 
-    main .add-new label {
-        align-self: center;
-    }
+main .add-new label {
+    align-self: center;
+}
 
-    main .add-new input {
-        padding: 1px;
-    }
+main .add-new input {
+    padding: 1px;
+}
 
-    main .add-new .required-marker {
-        color: red;
-    }
+main .add-new .required-marker {
+    color: red;
+}
 
-    main .add-new button {
-        grid-row: 7;
-        grid-column: 2;
-        align-self: center;
-        justify-self: right;
-    }
+main .add-new button {
+    grid-row: 7;
+    grid-column: 2;
+    align-self: center;
+    justify-self: right;
+}
 
-    main .add-new button[type=submit] {
-        grid-row: 6;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center;
-    }
+main .add-new button[type=submit] {
+    grid-row: 6;
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+}
 
-    main .add-new select {
-        grid-column: 2;
-    }
+main .add-new select {
+    grid-column: 2;
+}
 
-        main .add-new select:invalid ::placeholder {
-            color: red;
-        }
+main .add-new select:invalid ::placeholder {
+    color: red;
+}
 
 #spider-chart {
     justify-self: center;
 }
 
-    #spider-chart .chart-background {
-        fill: #EBEBEB;
-    }
+#spider-chart .chart-background {
+    fill: #EBEBEB;
+}
 
-    #spider-chart .chart-attributes {
-        stroke: black;
-        stroke-width: 1;
-        fill: #bfbfbf;
-    }
+#spider-chart .chart-attributes {
+    stroke: black;
+    stroke-width: 1;
+    fill: #bfbfbf;
+}
+
 
 /*#region footer*/
+
 footer {
     grid-area: footer;
     justify-self: center;
@@ -214,29 +212,31 @@ footer {
     margin-bottom: 5px;
 }
 
-    footer .info {
-        margin-top: 25px;
-        color: #454545;
-        font: 10px Arial, cursive;
-    }
+footer .info {
+    margin-top: 25px;
+    color: #454545;
+    font: 10px Arial, cursive;
+}
 
-    footer a {
-        color: #454545;
-    }
+footer a {
+    color: #454545;
+}
 
-        footer a:link {
-            text-decoration: none;
-        }
+footer a:link {
+    text-decoration: none;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer a:hover {
+    text-decoration: underline;
+}
 
-        footer a:visited {
-            text-decoration: none;
-        }
+footer a:visited {
+    text-decoration: none;
+}
 
-        footer a:active {
-            text-decoration: underline;
-        }
+footer a:active {
+    text-decoration: underline;
+}
+
+
 /*#endregion footer*/
