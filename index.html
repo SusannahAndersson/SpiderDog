@@ -61,7 +61,7 @@
                 <option value="Rörlighet">Rörlighet</option>
             </select>
             <button type="submit">Skapa</button>
-            <button @click="readDummyData">Hämta exempel</button>
+            <button @click="readDummyData" :disabled="isDisabled">Hämta exempel</button>
         </form>
         <div id="spider-chart">
             <svg height="340" width="340">

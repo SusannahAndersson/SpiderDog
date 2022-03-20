@@ -27,6 +27,12 @@ Vue.createApp({
         }
     },
 
+    computed: {
+        isDisabled() {
+            return this.items.length > 0;
+        }
+    },
+
     methods: {
         addNewItem() {
             this.items.push({
