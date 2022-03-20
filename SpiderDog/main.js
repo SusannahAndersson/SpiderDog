@@ -28,7 +28,7 @@ Vue.createApp({
     },
 
     computed: {
-        isDisabled() {
+        areThereItems() {
             return this.items.length > 0;
         }
     },
@@ -76,27 +76,27 @@ Vue.createApp({
                 // för varje gruppering (dvs kategori)
                 switch (item.trickCategory) {
                     // hämta ut rating och räknar hur många träffar
-                    case "Fysik":
+                    case "Physic":
                         returnValue[0] += Number(item.rating);
                         occurences[0]++;
                         break;
-                    case "Lydnad":
+                    case "Obedience":
                         returnValue[1] += Number(item.rating);
                         occurences[1]++;
                         break;
-                    case "Spåra":
+                    case "Tracking":
                         returnValue[2] += Number(item.rating);
                         occurences[2]++;
                         break;
-                    case "Stadga":
+                    case "Stability":
                         returnValue[3] += Number(item.rating);
                         occurences[3]++;
                         break;
-                    case "Lekfullhet":
+                    case "Playfullness":
                         returnValue[4] += Number(item.rating);
                         occurences[4]++;
                         break;
-                    case "Rörlighet":
+                    case "Agility":
                         returnValue[5] += Number(item.rating);
                         occurences[5]++;
                         break;
