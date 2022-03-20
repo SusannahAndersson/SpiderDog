@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Application to keep track of dog training process">
@@ -8,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider dog</title>
     <link rel="stylesheet" href="SpiderDog/StyleSheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Karla:wght@600&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/vue@3" defer></script>
     <script src="SpiderDog/main.js" defer></script>
 </head>
-
 <body>
     <header>
         <h1>Spider dog</h1>
@@ -42,9 +43,10 @@
                 </li>
             </ul>
             <section id="presentation" v-bind:class="{hidden: areThereItems}">
+                <h3>Välkommen</h3>
                 <p>Spider dog är en applikation som ger möjligheten att planera och följa upp träning med din hund. Som stöd finns det ett spindeldiagram som gör det enklare att få en överblick kring framstegen, därav namnet Spider Dog.</p>
                 <p>Det finns för närvarande inga träningsaktiviteter i listan. För att lägga till en ny, fyll i fomuläret. Eller hämta exempel.</p>
-                <p>Utvecklad som en del av frontendkursen på teknikhögskolan av tre student</p>
+                <p>Utvecklad som en del av frontendkursen på teknikhögskolan av tre studenter</p>
                 <ul class="credits">
                     <li>
                         <a href="https://github.com/Naelsh" target="_blank">Niklas</a>
@@ -81,7 +83,6 @@
                 <button type="submit">Skapa</button>
             </form>
             <button @click="readDummyData" :disabled="areThereItems">Hämta exempel</button>
-
         </div>
         <div id="spider-chart">
             <svg height="340" width="340">
@@ -96,12 +97,12 @@
             </svg>
         </div>
         <!--clearLocalStorage button nedan: Fungerar, men används enbart ur testsyfte dvs är ingen funktionalitet som end-user behöver-->
-        <button @click="clearLocalStorage">clearLocalStorage</button>
+        <!--<button @click="clearLocalStorage">clearLocalStorage</button>-->
     </main>
     <footer>
         <div class="info">
             <p>
-                Utvecklad av 
+                Utvecklad av
                 <a href="https://github.com/Naelsh" target="_blank">Niklas</a>
                 <a href="https://github.com/inaas13" target="_blank">Inaas</a>
                 <a href="https://github.com/SusannahAndersson" target="_blank">Susannah</a>
@@ -109,5 +110,4 @@
         </div>
     </footer>
 </body>
-
 </html>
