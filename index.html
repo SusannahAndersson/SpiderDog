@@ -20,7 +20,7 @@
         <div id="training-list-container">
             <h2>Lista med träningar</h2>
             <ul id="training-list">
-                <li v-for="(item, index) in items">
+                <li v-for="(item, index) in items" :key="item.id">
                     <h3>{{item.trickName}}</h3>
                     <p class="sign">{{item.trickSign}} </p>
                     <p class="command">{{item.trickCommand}} </p>
