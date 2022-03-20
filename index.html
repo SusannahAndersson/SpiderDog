@@ -57,29 +57,32 @@
                     </li>
                 </ul>
             </section>
+        </div>
+
+        <div class="add-new">
+            <form @submit.prevent="addNewItem">
+                <label for="new-trick-name">Namn <span class="required-marker">*</span></label>
+                <input v-model="trickName" id="new-trick-name" placeholder="Sitt" required>
+                <label for="new-trick-sign">Tecken</label>
+                <input v-model="trickSign" id="new-trick-sign" placeholder="Tecken">
+                <label for="new-trick-command">Kommando</label>
+                <input v-model="trickCommand" id="new-trick-command" placeholder="Sitt">
+                <label for="new-trick-description">Beskrivning</label>
+                <input v-model="trickDescription" id="new-trick-description" placeholder="Få hunden att sitta">
+                <select v-model="trickCategory" id="trick-category" name="trick-category" required>
+                    <option value="" disabled>Välj kategori</option>
+                    <option value="Physic">Fysik</option>
+                    <option value="Obedience">Lydnad</option>
+                    <option value="Tracking">Spåra</option>
+                    <option value="Stability">Stadga</option>
+                    <option value="Playfullness">Lekfullhet</option>
+                    <option value="Agility">Rörlighet</option>
+                </select>
+                <button type="submit">Skapa</button>
+            </form>
+            <button @click="readDummyData" :disabled="areThereItems">Hämta exempel</button>
 
         </div>
-        <form @submit.prevent="addNewItem" class="add-new">
-            <label for="new-trick-name">Namn <span class="required-marker">*</span></label>
-            <input v-model="trickName" id="new-trick-name" placeholder="Sitt" required>
-            <label for="new-trick-sign">Tecken</label>
-            <input v-model="trickSign" id="new-trick-sign" placeholder="Tecken">
-            <label for="new-trick-command">Kommando</label>
-            <input v-model="trickCommand" id="new-trick-command" placeholder="Sitt">
-            <label for="new-trick-description">Beskrivning</label>
-            <input v-model="trickDescription" id="new-trick-description" placeholder="Få hunden att sitta">
-            <select v-model="trickCategory" id="trick-category" name="trick-category" required>
-                <option value="" disabled>Välj kategori</option>
-                <option value="Physic">Fysik</option>
-                <option value="Obedience">Lydnad</option>
-                <option value="Tracking">Spåra</option>
-                <option value="Stability">Stadga</option>
-                <option value="Playfullness">Lekfullhet</option>
-                <option value="Agility">Rörlighet</option>
-            </select>
-            <button type="submit">Skapa</button>
-            <button @click="readDummyData" :disabled="areThereItems">Hämta exempel</button>
-        </form>
         <div id="spider-chart">
             <svg height="340" width="340">
                 <polygon class="chart-background" points="70,220 70,120 170,70 270,120 270,220 170,270" />

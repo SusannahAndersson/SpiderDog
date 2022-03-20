@@ -192,7 +192,7 @@ ul li {
 .add-new {
     display: grid;
     align-self: start;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 100%;
     background-color: #EBEBEB;
     width: auto;
     border: 1px solid darkgrey;
@@ -203,6 +203,11 @@ ul li {
 
     .add-new * {
         margin: 1px;
+    }
+
+    .add-new form {
+        display: grid;
+        grid-template-columns: 100px auto;
     }
 
     .add-new label {
@@ -217,14 +222,8 @@ ul li {
         color: red;
     }
 
-    .add-new button {
-        grid-row: 7;
-        grid-column: 2;
-        align-self: center;
-        justify-self: right;
-    }
-
-        .add-new button[type=submit] {
+    
+    .add-new button[type=submit] {
             grid-row: 6;
             grid-column: 2;
             align-self: center;
@@ -234,10 +233,15 @@ ul li {
     .add-new select {
         grid-column: 2;
     }
+    
+    .add-new select:invalid ::placeholder {
+        color: red;
+    }
 
-        .add-new select:invalid ::placeholder {
-            color: red;
-        }
+    .add-new button {
+        align-self: center;
+        justify-self: right;
+    }
 /*#endregion addnew*/
 
 /*#region spider-chart*/
