@@ -43,12 +43,20 @@ ul li {
     flex-direction: column;
 }
 
-    #training-list-container p {
-        
+    #training-list-container #presentation {
+        margin: 20px;
+        background-color: white;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    #training-list-container #presentation p {
+        margin: 15px 20px 5px 20px;
     }
 
     #training-list-container .credits {
-        margin-top: 15px;
+        margin: 40px;
         text-align: center;
     }
 
