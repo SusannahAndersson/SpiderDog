@@ -43,15 +43,15 @@
             </ul>
         </div>
         <form @submit.prevent="addNewItem" class="add-new">
-            <label for="trick-name">Namn</label>
-            <input v-model="trickName" id="trick-name" placeholder="Sitt">
+            <label for="trick-name">Namn <span class="required-marker">*</span></label>
+            <input v-model="trickName" id="trick-name" placeholder="Sitt" required>
             <label for="sign-name">Tecken</label>
             <input v-model="trickSign" id="sign-name" placeholder="Tecken">
             <label for="command-name">Kommando</label>
             <input v-model="trickCommand" id="command-name" placeholder="Sitt">
             <label for="description-name">Beskrivning</label>
             <input v-model="trickDescription" id="description-name" placeholder="Få hunden att sitta">
-            <select v-model="trickCategory" id="item-name" name="item-name">
+            <select v-model="trickCategory" id="item-name" name="item-name" required>
                 <option value="" disabled>Välj kategori</option>
                 <option value="Fysik">Fysik</option>
                 <option value="Lydnad">Lydnad</option>
