@@ -47,6 +47,32 @@ ul li {
         
     }
 
+    #training-list-container .credits {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #training-list-container .credits li {
+        display: inline;
+    }
+
+    #training-list-container .credits a {
+        color: white;
+        background-color: #454545;
+        margin: 5px;
+        padding: 8px;
+        text-align: center;
+        justify-self: left;
+        align-self: left;
+        border-radius: 15px;
+    }
+
+    #training-list-container .credits a:hover {
+        color: #454545;
+        background-color: white;
+        border-color: #454545;
+    }
+
     #training-list-container .hidden{
         display: none;
     }
@@ -80,6 +106,14 @@ ul li {
 
         #training-list-container #training-list li .category {
             grid-area: i;
+            color: white;
+            background-color: #454545;
+            margin: 5px;
+            padding: 8px;
+            text-align: center;
+            justify-self: left;
+            align-self: left;
+            border-radius: 15px;
         }
 
         #training-list-container #training-list li .rate {
