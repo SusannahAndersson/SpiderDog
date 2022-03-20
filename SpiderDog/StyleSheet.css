@@ -1,4 +1,5 @@
-﻿* {
+﻿/*#region general*/
+* {
     margin: 0;
     padding: 0;
 }
@@ -20,18 +21,16 @@ main {
     display: grid;
     grid-template-columns: 50% 50%;
 }
+/*#endregion general*/
 
-@media (max-width: 735px) {
-    main {
-        display: grid;
-        grid-template-columns: 100%;
-    }
-    main .add-new {
-        width: auto;
-    }
+/*#region training-list*/
+ul li {
+    margin: 10px auto;
+    text-align: start;
+    list-style: none;
 }
 
-main #training-list-container {
+#training-list-container {
     background-color: #EBEBEB;
     width: auto;
     border: 1px solid darkgrey;
@@ -44,110 +43,97 @@ main #training-list-container {
     flex-direction: column;
 }
 
-main #training-list-container #training-list li {
-    display: grid;
-    grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i j";
-    background-color: white;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-@media (max-width: 400px) {
-    main #training-list-container #training-list li {
-        grid-template-areas: "a a a" "b b b" "c c c" "e e f" "g g h" "i i j";
+    #training-list-container #training-list li {
+        display: grid;
+        grid-template-areas: "a b b" "c c c" "e e f" "g g h" "i i j";
+        background-color: white;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
     }
-    main #training-list-container #training-list li .rate {
-        justify-self: start;
-    }
-}
 
-main #training-list-container #training-list li h3 {
-    grid-area: a;
-    align-self: center;
-}
+        #training-list-container #training-list li h3 {
+            grid-area: a;
+            align-self: center;
+        }
 
-main #training-list-container #training-list li .sign {
-    grid-area: c;
-}
+        #training-list-container #training-list li .sign {
+            grid-area: c;
+        }
 
-main #training-list-container #training-list li .command {
-    grid-area: e;
-}
+        #training-list-container #training-list li .command {
+            grid-area: e;
+        }
 
-main #training-list-container #training-list li .description {
-    grid-area: g;
-}
+        #training-list-container #training-list li .description {
+            grid-area: g;
+        }
 
-main #training-list-container #training-list li .category {
-    grid-area: i;
-}
+        #training-list-container #training-list li .category {
+            grid-area: i;
+        }
 
-main #training-list-container #training-list li .rate {
-    grid-area: b;
-    align-self: start;
-}
+        #training-list-container #training-list li .rate {
+            grid-area: b;
+            align-self: start;
+        }
 
-main #training-list-container #training-list li button {
-    grid-area: j;
-    margin: 0;
-    padding: 0;
-    justify-self: end;
-    margin-right: 10px;
-}
+        #training-list-container #training-list li button {
+            grid-area: j;
+            margin: 0;
+            padding: 0;
+            justify-self: end;
+            margin-right: 10px;
+        }
+/*#endregion training-list*/
 
-ul li {
-    margin: 10px auto;
-    text-align: start;
-    list-style: none;
-}
-
+/*#region rate*/
 .rate {
     float: left;
     height: 46px;
     padding: 0 10px 0 0;
 }
 
-.rate:not(:checked)>input {
-    position: absolute;
-    top: -9999px;
-}
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
 
-.rate:not(:checked)>label {
-    float: right;
-    width: 1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 30px;
-    color: #ccc;
-}
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
 
-.rate:not(:checked)>label:before {
-    content: '★ ';
-}
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
 
-.rate>input:checked~label {
-    color: #ffc700;
-}
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
 
-.rate:not(:checked)>label:hover,
-.rate:not(:checked)>label:hover~label {
-    color: #deb217;
-}
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
 
-.rate>input:checked+label:hover,
-.rate>input:checked+label:hover~label,
-.rate>input:checked~label:hover,
-.rate>input:checked~label:hover~label,
-.rate>label:hover~input:checked~label {
-    color: #c59b08;
-}
-
-
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+/*#endregion rate*/
 
-main .add-new {
+/*#region addnew*/
+.add-new {
     display: grid;
     align-self: start;
     grid-template-columns: 30% auto;
@@ -159,61 +145,62 @@ main .add-new {
     margin: 15px;
 }
 
-main .add-new * {
-    margin: 1px;
-}
+    .add-new * {
+        margin: 1px;
+    }
 
-main .add-new label {
-    align-self: center;
-}
+    .add-new label {
+        align-self: center;
+    }
 
-main .add-new input {
-    padding: 1px;
-}
+    .add-new input {
+        padding: 1px;
+    }
 
-main .add-new .required-marker {
-    color: red;
-}
+    .add-new .required-marker {
+        color: red;
+    }
 
-main .add-new button {
-    grid-row: 7;
-    grid-column: 2;
-    align-self: center;
-    justify-self: right;
-}
+    .add-new button {
+        grid-row: 7;
+        grid-column: 2;
+        align-self: center;
+        justify-self: right;
+    }
 
-main .add-new button[type=submit] {
-    grid-row: 6;
-    grid-column: 2;
-    align-self: center;
-    justify-self: center;
-}
+        .add-new button[type=submit] {
+            grid-row: 6;
+            grid-column: 2;
+            align-self: center;
+            justify-self: center;
+        }
 
-main .add-new select {
-    grid-column: 2;
-}
+    .add-new select {
+        grid-column: 2;
+    }
 
-main .add-new select:invalid ::placeholder {
-    color: red;
-}
+        .add-new select:invalid ::placeholder {
+            color: red;
+        }
+/*#endregion addnew*/
 
+/*#region spider-chart*/
 #spider-chart {
     justify-self: center;
 }
 
-#spider-chart .chart-background {
-    fill: #EBEBEB;
-}
+    #spider-chart .chart-background {
+        fill: #EBEBEB;
+    }
 
-#spider-chart .chart-attributes {
-    stroke: black;
-    stroke-width: 1;
-    fill: #bfbfbf;
-}
-
+    #spider-chart .chart-attributes {
+        stroke: black;
+        stroke-width: 1;
+        fill: #bfbfbf;
+    }
+/*#endregion spider-chart*/
 
 /*#region footer*/
-
 footer {
     grid-area: footer;
     justify-self: center;
@@ -221,31 +208,52 @@ footer {
     margin-bottom: 5px;
 }
 
-footer .info {
-    margin-top: 25px;
-    color: #454545;
-    font: 10px Arial, cursive;
-}
+    footer .info {
+        margin-top: 25px;
+        color: #454545;
+        font: 10px Arial, cursive;
+    }
 
-footer a {
-    color: #454545;
-}
+    footer a {
+        color: #454545;
+    }
 
-footer a:link {
-    text-decoration: none;
-}
+        footer a:link {
+            text-decoration: none;
+        }
 
-footer a:hover {
-    text-decoration: underline;
-}
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-footer a:visited {
-    text-decoration: none;
-}
+        footer a:visited {
+            text-decoration: none;
+        }
 
-footer a:active {
-    text-decoration: underline;
-}
-
-
+        footer a:active {
+            text-decoration: underline;
+        }
 /*#endregion footer*/
+
+/*#region media*/
+@media (max-width: 400px) {
+    #training-list-container #training-list li {
+        grid-template-areas: "a a a" "b b b" "c c c" "e e f" "g g h" "i i j";
+    }
+
+        #training-list-container #training-list li .rate {
+            justify-self: start;
+        }
+}
+
+@media (max-width: 735px) {
+    main {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .add-new {
+        width: auto;
+    }
+}
+/*#endregion media*/
